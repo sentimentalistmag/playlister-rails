@@ -1,0 +1,2283 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (38.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:17:11 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 21:17:11 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (14.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:17:28 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 21:17:28 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 22ms (ActiveRecord: 3.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 21:20:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (12.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "artists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "record_label" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131205215959')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131205204544')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (26.6ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+  Rendered songs/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 17.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/songs/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/songs
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:02:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:06:19 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:06:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:08:22 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:08:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:08:40 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:08:40 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:11:15 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:11:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Rspec (20131205221942)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (27.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20131205221942"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.3ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (63.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:21:42 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:21:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:21:43 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:21:43 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:21:43 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:21:43 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.3ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:21:50 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.2ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:32:19 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:32:19 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:32:20 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.3ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:34:44 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.2ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00]]
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:35:00 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.5ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00]]
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:36:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.3ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["name", "libertines"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 2], ["created_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:41:42 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (24.5ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.6ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (36.8ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "songs" WHERE "songs"."id" = ?  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 81ms (Views: 79.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#index as HTML
+Completed 200 OK in 52ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (30.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:45:33 UTC +00:00]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (2.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'libertines' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["name", "libertines"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 2], ["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:45:34 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (23.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (45.8ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (2.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#index as HTML
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (2.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "libertines"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 2], ["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (2.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:23 UTC +00:00]]
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (61.1ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.4ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (11.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00], ["title", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:41 UTC +00:00]]
+Processing by SongsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00], ["name", "MyString"], ["updated_at", Thu, 05 Dec 2013 22:46:42 UTC +00:00]]
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.2ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:46:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.2ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:50:15 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.3ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (14.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:50:29 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.2ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (11.5ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:51:17 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (10.0ms)[0m  [1mDELETE FROM "songs";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'songs';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["name", "Libertines"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (2.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["title", "Guillotine"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["title", "Ganja"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Thu, 05 Dec 2013 22:51:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m

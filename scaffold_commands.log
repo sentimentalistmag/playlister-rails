@@ -1,0 +1,8 @@
+Commands to create scaffolds 
+Artist 
+
+rails g scaffold artist name:string record_label:string 
+
+rails destroy scaffold artist
+#create a migration
+rails g migration AddArtistToSong artist_id:integer

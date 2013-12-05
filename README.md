@@ -1,2 +1,4 @@
-playlister-rails
-================
+playlister
+==========
+
+Jukebox player OO edition
