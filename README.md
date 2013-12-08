@@ -1,4 +1,4 @@
 playlister
 ==========
 
-Jukebox player OO edition
+Jukebox player OO edition on rails
