@@ -1,6 +1,18 @@
 class Song < ActiveRecord::Base
     belongs_to :artist  #song has an artist id
-    
+    belongs_to :genre  #song has a  genre id
+    #reader for genre name
+    def genre_name
+      self.genre.name unless self.genre.nil?
+    end
+
+    def genre_name=(genre_name)
+      #implicit instance variable
+      @genre_name = genre_name
+      #this is an upsert
+      self.genre = Genre.find_or_create_by(:name=>genre_name)
+
+    end
     #reader
     def artist_name
        self.artist.name unless self.artist.nil? 

@@ -1,4 +1,6 @@
 Playlister::Application.routes.draw do
+  resources :genres
+
   resources :songs
 
     root 'artists#index'
