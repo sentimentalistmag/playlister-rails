@@ -34,5 +34,12 @@ describe Song do
         song = Song.create(:title=> "Fuck Forever", :artist_name=> "Libertines")
         expect(song.artist_name).to eq("Libertines")
     end
+
+  it "has a genre" do
+
+    song = Song.new(title: "Rap God")
+    song.genre = Genre.new(name: "Rap")
+    expect(song.genre.name).to eq("Rap")
+  end
   #pending "add some examples to (or delete) #{__FILE__}"
 end

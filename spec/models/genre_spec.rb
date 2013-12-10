@@ -26,6 +26,18 @@ describe Genre do
     expect(genre.songs.count).to eq(2)
   end
 
+  it "has a ton of artists"     do
+    genre = Genre.create(:name=>"Bland Pop")
+    10000.times do |stupid_song|
+      song = Song.create(title: "Stupid Song #{stupid_song}", genre: genre)
+    end
+    start_time = Time.now
+    expect(genre.songs.count).to eq(10000)
+    time_difference = Time.now - start_time
+    puts "Time difference"
+    puts time_difference
+  end
+
 
 
 

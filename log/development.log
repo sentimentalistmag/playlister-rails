@@ -1299,3 +1299,58 @@ Migrating to AddGenreToSong (20131207210221)
   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131205220730')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131205221942')
   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131206182127')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-10 15:43:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.4ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 136ms (Views: 131.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 15:43:09 -0500
+
+
+Started GET "/songs" for 127.0.0.1 at 2013-12-10 15:43:19 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.4ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 39ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2013-12-10 15:43:44 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (10.7ms)
+  Rendered songs/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
