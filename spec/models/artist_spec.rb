@@ -41,5 +41,16 @@ describe Artist do
         expect(artist.songs.count).to eq(1)
         expect(artist.songs.first.title).to eq(song.title)
     end
+
+    it "has genres"  do
+      genre = Genre.new(:name=>"reggae")
+      artist = Artist.new(:name => "Bob Marley")
+      song = Song.new(:title=> "Ganja", :genre=>genre)
+      artist.songs << song
+      remix_song = Song.new(:title=>"Ganja (Prodigy Remix)", :genre_name=>"trip hop")
+      artist.songs << song
+      artist.save
+      expect(artist.genres.count).to eq(2)
+    end
   #pending "add some examples to (or delete) #{__FILE__}"
 end

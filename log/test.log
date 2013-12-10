@@ -4887,3 +4887,1846 @@ Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sat, 07 Dec 2013 21:05:47 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Sat, 07 Dec 2013 21:05:47 UTC +00:00]]
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.4ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:44 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:11:44 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:11:44 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:11:44 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "With House"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:11:45 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "With House"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:14:15 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.6ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Autre"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["artist_id", 2], ["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["genre_id", 1], ["title", "Ne Ve Ut"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists" WHERE "artists"."genre_id" = ?[0m  [[nil, 1]]
+SQLite3::SQLException: no such column: artists.genre_id: SELECT COUNT(*) FROM "artists"  WHERE "artists"."genre_id" = ?
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "With House"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:14:50 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.7ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#index as HTML
+  Rendered genres/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#update as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#update as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/genres/1
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#update as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/genres/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#update as HTML
+  Parameters: {"genre"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#update as HTML
+  Parameters: {"genre"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GenresController#new as HTML
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "genres"
+Processing by GenresController#create as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Redirected to http://test.host/genres/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "genres"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GenresController#create as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Redirected to http://test.host/genres/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GenresController#create as HTML
+  Parameters: {"genre"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Redirected to http://test.host/genres/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" ORDER BY "genres"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GenresController#create as HTML
+  Parameters: {"genre"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by GenresController#create as HTML
+  Parameters: {"genre"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "genres"[0m
+Processing by GenresController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "genres" WHERE "genres"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/genres
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "genres"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by GenresController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "genres" WHERE "genres"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/genres
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "With House"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by SongsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:09 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}, "id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#update as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}, "id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"MyString"}}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/songs/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SongsController#create as HTML
+  Parameters: {"song"=>{"title"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["title", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by SongsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.0ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/songs
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}, "id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"MyString"}}
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Redirected to http://test.host/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"artist"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00], ["name", "MyString"], ["updated_at", Tue, 10 Dec 2013 01:25:10 UTC +00:00]]
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+Redirected to http://test.host/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.6ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "With House"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:26:02 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.7ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:42:48 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:44:13 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:46:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.9ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.9ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (23.8ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:47:30 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:47:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:48:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.5ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 1[0m  [["artist_id", 1], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["name", "Autre"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00], ["genre_id", 1], ["title", "Ne Ve Ut"], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 2  [["artist_id", 2], ["updated_at", Tue, 10 Dec 2013 01:53:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists" WHERE "artists"."genre_id" = ?[0m  [[nil, 1]]
+SQLite3::SQLException: no such column: artists.genre_id: SELECT COUNT(*) FROM "artists"  WHERE "artists"."genre_id" = ?
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.7ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (23.0ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 1[0m  [["artist_id", 1], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["name", "Autre"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00], ["genre_id", 1], ["title", "Ne Ve Ut"], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 2  [["artist_id", 2], ["updated_at", Tue, 10 Dec 2013 01:54:36 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.1ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.9ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 1[0m  [["artist_id", 1], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Autre"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["genre_id", 1], ["title", "Ne Ve Ut"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 2  [["artist_id", 2], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = ?[0m  [["genre_id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:55:02 UTC +00:00]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (23.6ms)[0m  INSERT INTO "artists" ("created_at", "name", "record_label", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "White Ring"], ["record_label", "RiotGirrrl"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE (name like '%white%') LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'White Ring' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = 'trip hop' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "trip hop"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Bob Marley"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "reggae"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["genre_id", 2], ["title", "Ganja"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Hip-Hop"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Indie Pop"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Cassie"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["genre_id", 1], ["title", "Boom Bop"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 1  [["artist_id", 1], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Autre"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["genre_id", 1], ["title", "Ne Ve Ut"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 2[0m  [["artist_id", 2], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Witch House"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["genre_id", 1], ["title", "Hey hey, my my"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("created_at", "genre_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["genre_id", 1], ["title", "Six Sick Six"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."genre_id" = ?  [["genre_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["title", "Guillotine"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = 'Guillotine' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Frank Sinatra"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Frank Sinatra' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."name" = 'Libertines' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["name", "Libertines"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 1], ["created_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00], ["title", "Fuck Forever"], ["updated_at", Tue, 10 Dec 2013 01:55:12 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  rollback transaction
