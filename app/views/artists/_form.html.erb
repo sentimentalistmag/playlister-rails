@@ -23,7 +23,16 @@
     <%= f.text_field :record_label %>
     
     <input type='text' id='artist_record_lable' name='artist[record_label]' value='<%=@artist.record_label%>'/>
+
   </div>
+    <div class="field">
+        <h4>Songs:</h4>
+      <!-- not dealing with a direct attribute for rails  -->
+        <%= text_field_tag "artist[song_names][]" %>  <br />
+          <%= text_field_tag "artist[song_names][]" %>      <br />
+          <%= text_field_tag "artist[song_names][]" %>            <br />
+          <%= text_field_tag "artist[song_names][]" %>                  <br />
+    </div>
   
   <div class="actions">
     <%= f.submit %>

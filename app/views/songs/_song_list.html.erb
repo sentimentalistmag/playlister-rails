@@ -1,0 +1,31 @@
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  The html returned by the Song helper is escaped html, the raw(input) method allows to unenscape that and turn it into html
+  as much as possible howeve don't use helpers for html.
+
+  Also look at HereDoc   .
+
+<% songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+
+      <td><%= raw show_song_label song %></td>
+      <td><%= link_to 'Show', song %></td>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+
+  </tbody>
+</table>
+
+<br>
