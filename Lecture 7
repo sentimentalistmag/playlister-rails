@@ -1,1 +1,8 @@
  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+
+Switch gem environments
+ rvm gemset create rails4
+ rvm current
+ rvm gemset user rails4
+ rvm current
+ gem list

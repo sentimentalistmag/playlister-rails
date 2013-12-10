@@ -1,6 +1,9 @@
 class Song < ActiveRecord::Base
     belongs_to :artist  #song has an artist id
     belongs_to :genre  #song has a  genre id
+
+    validates :title, :presence => {:message=> "Every song has a name, enter one even if it's Untitled"  }
+
     #reader for genre name
     def genre_name
       self.genre.name unless self.genre.nil?

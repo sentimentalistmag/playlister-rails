@@ -41,5 +41,14 @@ describe Song do
     song.genre = Genre.new(name: "Rap")
     expect(song.genre.name).to eq("Rap")
   end
+
+  it "It requires a title (can't be an empty)" do
+    song = Song.new
+    expect(song.valid?).to eq(false)
+    #the rest o this test is unnecessary
+    song.save
+    puts song.errors.to_yaml
+    expect(Song.all.count).to eq(0)
+  end
   #pending "add some examples to (or delete) #{__FILE__}"
 end

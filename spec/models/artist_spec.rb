@@ -52,5 +52,14 @@ describe Artist do
       artist.save
       expect(artist.genres.count).to eq(2)
     end
+
+    it "can have a collection of songs added"  do
+      artist = Artist.new(:name=>"Smiths")
+      song_names = ['Misery', 'Beauty of Midnight', 'Coffin For Me', 'Tears']
+      artist.song_names = song_names
+      artist.save
+      expect(artist.songs.count).to eq(4)
+      expect(artist.songs.map { |m| m.title }).to include("Tears")
+    end
   #pending "add some examples to (or delete) #{__FILE__}"
 end

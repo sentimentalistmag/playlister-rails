@@ -1354,3 +1354,31 @@ Processing by SongsController#new as HTML
   Rendered songs/_form.html.erb (10.7ms)
   Rendered songs/new.html.erb within layouts/application (13.6ms)
 Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2013-12-10 16:30:47 -0500
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "song"=>{"title"=>"Hey Jude", "artist_name"=>"The Beatles"}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."name" = 'The Beatles' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "artists" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 10 Dec 2013 21:30:47 UTC +00:00], ["name", "The Beatles"], ["updated_at", Tue, 10 Dec 2013 21:30:47 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("artist_id", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 4], ["created_at", Tue, 10 Dec 2013 21:30:47 UTC +00:00], ["title", "Hey Jude"], ["updated_at", Tue, 10 Dec 2013 21:30:47 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/4
+Completed 302 Found in 28ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2013-12-10 16:30:47 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-10 16:30:47 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-10 16:30:47 -0500

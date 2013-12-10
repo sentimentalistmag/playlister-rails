@@ -19,4 +19,23 @@ class Artist < ActiveRecord::Base
 
     end
 
+    def song_names= (names)
+      names.each do |song_name|
+        #or self.songs.build(:title=>song_name)
+        song = Song.find_or_create_by(:title=>song_name)
+        self.songs << song
+      end
+    end
+
+    def song_names
+      local_names = []
+      songs.each do |song|
+        local_names << song.title
+      end
+      local_names
+    end
+
+  #TYPES = %w[band solo]
+  #validates :type, :inclusion => {:in=>Artist::TYPE}
+
 end
