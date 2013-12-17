@@ -25,5 +25,15 @@
 </table>
 
 <br>
-
+<%= link_to 'Make Songs', make_songs_path, :id=>"make_songs"%>
 <%= link_to 'New Artist', new_artist_path %>
+
+<script>
+  $(document).ready(function(){
+       $("#make_songs").on("click", function(){
+           $.get('<%=make_songs_path%>', function(data){
+
+           });
+       })  ;
+  })  ;
+</script>

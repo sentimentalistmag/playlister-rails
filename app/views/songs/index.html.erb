@@ -1,7 +1,21 @@
+Current User: <%= current_user %>
 <h1>Listing songs</h1>
-
+<div id="songs_list">
 
   <%= render 'song_list', songs:@songs    %>
-
+</div>
 
 <%= link_to 'New Song', new_song_path %>
+
+<%= link_to 'Make Songs', make_songs_path, :id=>"make_songs", :href=>"#"%>
+
+
+<script>
+    $(document).ready(function(){
+        $("#make_songs").on("click", function(){
+            $.get('<%=make_songs_path%>', function(data){
+                  $("#songs_list").html(data);
+            });
+        })  ;
+    })  ;
+</script>

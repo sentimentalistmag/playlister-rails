@@ -24,7 +24,7 @@ module Playlister
           g.test_framework :rspec,
             :view_specs => false,
             :helper_specs => false
-          
+          g.fixtures :factory_girl, :dir=>'spec/factories'
           g.jbuilder  false
           g.coffee false
           g.view_specs false        #testing views, disabling as this may be weird, but also it maybe be useful

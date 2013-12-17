@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Artist do
     it "has a name and record label" do
-        artist = Artist.create(:name=>'White Ring', :record_label=>'RiotGirrrl')
+        #artist = Artist.create(:name=>'White Ring', :record_label=>'RiotGirrrl')
+        artist = FactoryGirl.create(:artist, :name=>"White Ring")
         expect(Artist.all.count).to eq(1)
         ##rails 3 had 
         # Artist.find_by_name
@@ -61,5 +62,12 @@ describe Artist do
       expect(artist.songs.count).to eq(4)
       expect(artist.songs.map { |m| m.title }).to include("Tears")
     end
-  #pending "add some examples to (or delete) #{__FILE__}"
+
+  it "has a slugified name" do
+    artist = Artist.new()
+    artist.name = "New Order"
+    artist.save
+    expect(artist.slug).to eq("new-order")
+  end
+  #pending "add some examles to (or delete) #{__FILE__}"
 end

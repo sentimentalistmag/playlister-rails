@@ -3,6 +3,12 @@ class Artist < ActiveRecord::Base
         #attr_accessible :name, :record_label
     has_many :songs
 
+    before_save :sluggify
+
+    def sluggify
+      self.slug = self.name.gsub(" ", "-").downcase
+    end
+
     def add_song (song)
       #song.genre.artists << self
       self.songs<<song
@@ -33,6 +39,20 @@ class Artist < ActiveRecord::Base
         local_names << song.title
       end
       local_names
+    end
+
+    def to_param
+      self.sluggify unless self.slug
+      self.slug
+    end
+
+    def self.find(val)
+      if val.to_i != 0
+        super val
+      else
+        find_by(:slug=>val)
+      end
+
     end
 
   #TYPES = %w[band solo]

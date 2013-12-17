@@ -1,15 +1,22 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :get_main_artist
 
+  skip_before_action :set_something, only: [:index]
   # GET /artists
   # GET /artists.json
   def index
     @artists = Artist.all
+
   end
 
   # GET /artists/1
   # GET /artists/1.json
   def show
+    respond_to do |format|
+      format.json {render json:@artist}
+    end
+
   end
 
   # GET /artists/new
@@ -62,6 +69,10 @@ class ArtistsController < ApplicationController
   end
 
   private
+
+    def get_main_artist
+      session[:main_artist] = "Moby"
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_artist
       @artist = Artist.find(params[:id])

@@ -1,10 +1,19 @@
 Playlister::Application.routes.draw do
+  devise_for :users
+  #devise_for :installs
+  get "songs/makesome" => "songs#make_songs", :as=> :make_songs
+
+  resources :tours
+
   resources :genres
 
   resources :songs
 
-    root 'artists#index'
-    resources :artists
+  root 'artists#index'
+
+
+    #get 'artists/:slug'
+  resources :artists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

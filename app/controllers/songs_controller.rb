@@ -7,6 +7,13 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def make_songs
+    3.times do |i|
+      Song.create(:title=>"new song #{i}")
+    end
+    render :partial => 'song_list', locals: {songs: Song.all}
+  end
+
   # GET /songs/1
   # GET /songs/1.json
   def show
