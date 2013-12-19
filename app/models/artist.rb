@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
         ##rails 3 has this
         #attr_accessible :name, :record_label
     has_many :songs
+    has_many :genres, through: :songs
 
     before_save :sluggify
 
@@ -34,11 +35,14 @@ class Artist < ActiveRecord::Base
     end
 
     def song_names
-      local_names = []
-      songs.each do |song|
-        local_names << song.title
+      Rails.cache.fetch([:artist,self.id,:songs]) do
+
+        local_names = []
+        songs.each do |song|
+          local_names << song.title
+        end
+        local_names
       end
-      local_names
     end
 
     def to_param
@@ -55,6 +59,25 @@ class Artist < ActiveRecord::Base
 
     end
 
+  def self.find_by_genre(genre_name)
+    #AREL
+    #joins(:songs)
+    #.joins(:genres)   # Artist doesn't know about genres
+    #.where("genres.name ILIKE ?", genre_name)
+    #joins("inner join songs on so")
+    joins(:songs => :genre)
+    .where("genres.name LIKE ?", genre_name)
+    #.joins(:genres)   # Artist doesn't know about genres
+
+  end
+
+  def self.with_record_labels()
+    where ("record_label is not null")
+  end
+
+  def self.with_specific_label(label)
+    where(record_label: label)
+  end
   #TYPES = %w[band solo]
   #validates :type, :inclusion => {:in=>Artist::TYPE}
 

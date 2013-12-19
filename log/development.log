@@ -5021,3 +5021,617 @@ Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-12 22:26:41 -0500
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-12 22:26:41 -0500
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 0)
+Dalli::Server#connect localhost:11211
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 17:20:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 30ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-12-17 17:20:32 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 98ms (Views: 88.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:33 -0500
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "user"=>{"email"=>"dmitri.nesterenko@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'dmitri.nesterenko@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "user"=>{"email"=>"dmitri.nesterenko@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 63ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:40 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:41 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "user"=>{"email"=>"dmitri.nesterenko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'dmitri.nesterenko@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 77ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:46 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "user"=>{"email"=>"dmitri.nesterenko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'dmitri.nesterenko@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:20:54 UTC +00:00], ["email", "dmitri.nesterenko@gmail.com"], ["encrypted_password", "$2a$10$eozy1v2dB1OMrUrc3v7AUOSqV7vloh6CJTNiC4bREzMbv8VkA646q"], ["updated_at", Tue, 17 Dec 2013 22:20:54 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["last_sign_in_at", Tue, 17 Dec 2013 22:20:54 UTC +00:00], ["current_sign_in_at", Tue, 17 Dec 2013 22:20:54 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Tue, 17 Dec 2013 22:20:54 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+Processing by ArtistsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:20:54 -0500
+
+
+Started GET "/songs/makesome" for 127.0.0.1 at 2013-12-17 17:20:56 -0500
+Processing by SongsController#make_songs as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00], ["title", "new song 0"], ["updated_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00], ["title", "new song 1"], ["updated_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00], ["title", "new song 2"], ["updated_at", Tue, 17 Dec 2013 22:20:56 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+Cache digest for songs/_song_list.html: 4c82c7cb2a4bda58eb2f9524d6dcf564
+Dalli::Server#connect localhost:11211
+Read fragment views/songs/1-20131217222056801189000/songs/2-20131217222056803276000/songs/3-20131217222056804655000/4c82c7cb2a4bda58eb2f9524d6dcf564 (1.3ms)
+  Rendered songs/_song_list.html.erb (6.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    16: 
+    17: <% cache songs.each do |song| %>
+    18:     <tr>
+    19:       <td><%= song.title %></td>
+    20: 
+    21:       <td><%= raw show_song_label song %></td>
+    22:       <td><%= link_to 'Show', song %></td>
+  app/views/songs/_song_list.html.erb:19:in `block in _app_views_songs__song_list_html_erb___1504752616153678467_70347925521020'
+  app/views/songs/_song_list.html.erb:17:in `_app_views_songs__song_list_html_erb___1504752616153678467_70347925521020'
+  app/controllers/songs_controller.rb:14:in `make_songs'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/songs/makesome" for 127.0.0.1 at 2013-12-17 17:22:48 -0500
+Processing by SongsController#make_songs as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00], ["title", "new song 0"], ["updated_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00], ["title", "new song 1"], ["updated_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00], ["title", "new song 2"], ["updated_at", Tue, 17 Dec 2013 22:22:48 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/_song_list.html.erb (7.0ms)
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/songs/makesome" for 127.0.0.1 at 2013-12-17 17:22:51 -0500
+Processing by SongsController#make_songs as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00], ["title", "new song 0"], ["updated_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00], ["title", "new song 1"], ["updated_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00], ["title", "new song 2"], ["updated_at", Tue, 17 Dec 2013 22:22:51 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/_song_list.html.erb (2.8ms)
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/songs/makesome" for 127.0.0.1 at 2013-12-17 17:22:53 -0500
+Processing by SongsController#make_songs as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00], ["title", "new song 0"], ["updated_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00], ["title", "new song 1"], ["updated_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00], ["title", "new song 2"], ["updated_at", Tue, 17 Dec 2013 22:22:53 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/_song_list.html.erb (3.9ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/songs/makesome" for 127.0.0.1 at 2013-12-17 17:22:55 -0500
+Processing by SongsController#make_songs as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00], ["title", "new song 0"], ["updated_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00], ["title", "new song 1"], ["updated_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00], ["title", "new song 2"], ["updated_at", Tue, 17 Dec 2013 22:22:55 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/_song_list.html.erb (29.3ms)
+Completed 200 OK in 37ms (Views: 29.9ms | ActiveRecord: 3.4ms)
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT 1
+
+
+Started GET "/artists" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:44 -0500
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+Processing by ArtistsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered artists/_form.html.erb (33.2ms)
+  Rendered artists/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:46 -0500
+
+
+Started POST "/artists" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "artist"=>{"name"=>"Touch Me", "record_label"=>"Me", "song_names"=>["", "", "", ""]}, "commit"=>"Create Artist"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."title" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered artists/_form.html.erb (2.9ms)
+  Rendered artists/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 7.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:32:54 -0500
+
+
+Started POST "/artists" for 127.0.0.1 at 2013-12-17 17:33:00 -0500
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ni8wLAuxlm+hOP4tRSi08pJO+vno9blunR0PI+nafRg=", "artist"=>{"name"=>"Touch Me", "record_label"=>"Me", "song_names"=>["1", "2", "3", "4"]}, "commit"=>"Create Artist"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '1' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00], ["title", "1"], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '2' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00], ["title", "2"], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '3' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00], ["title", "3"], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."title" = '4' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00], ["title", "4"], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("created_at", "name", "record_label", "slug", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00], ["name", "Touch Me"], ["record_label", "Me"], ["slug", "touch-me"], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 16  [["artist_id", 1], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  UPDATE "artists" SET "updated_at" = '2013-12-17 22:33:00.581817' WHERE "artists"."id" = 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 17[0m  [["artist_id", 1], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "artists" SET "updated_at" = '2013-12-17 22:33:00.583357' WHERE "artists"."id" = 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 18  [["artist_id", 1], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  UPDATE "artists" SET "updated_at" = '2013-12-17 22:33:00.584463' WHERE "artists"."id" = 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = 19[0m  [["artist_id", 1], ["updated_at", Tue, 17 Dec 2013 22:33:00 UTC +00:00]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."id" = ? ORDER BY "artists"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "artists" SET "updated_at" = '2013-12-17 22:33:00.585583' WHERE "artists"."id" = 1[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/artists/touch-me
+Completed 302 Found in 21ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/artists/touch-me" for 127.0.0.1 at 2013-12-17 17:33:00 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"touch-me"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists" WHERE "artists"."slug" = 'touch-me' LIMIT 1
+Completed 406 Not Acceptable in 2ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/artists_controller.rb:16:in `show'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/artists/" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/artists.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/tours.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/artists.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+
+
+Started GET "/assets/tours.js?body=1" for 127.0.0.1 at 2013-12-17 17:33:08 -0500
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT 1[0m
+  [1m[35mSong Load (1.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT 1[0m

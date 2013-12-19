@@ -69,5 +69,40 @@ describe Artist do
     artist.save
     expect(artist.slug).to eq("new-order")
   end
+
+  it "can find artists for a given genre" do
+    artist = Artist.create(name:"Prince!")
+    artist.songs.build(title: "Untitled", genre_name:"Pop")
+    artist.songs.build(title: "Purple", genre_name:"Pop")
+    artist2 = Artist.create(name:"Run DMC")
+    a = Artist.find_by_genre("Pop")
+    #expect(a).to eq(artist)
+    expect(a.count).to eq(1)
+
+
+  end
+
+  it "can find artists that have a record label" do
+    artist = Artist.create(name:"Prince!", record_label: "Astra")
+
+    artist2 = Artist.create(name:"Run DMC", record_label: "Epic")
+
+    artist3 = Artist.create(name:"Circle Jerks")
+
+    artists = Artist.with_record_labels()
+
+    expect(artists.count).to eq(2)
+
+
+  end
+
+  it "has genres"  do
+    artist = Artist.create(name:"Prince!")
+    artist.songs.build(title: "Untitled", genre_name:"Pop")
+    artist.songs.build(title: "Purple", genre_name:"Pop")
+    artist.save
+    expect(artist.genres.count).to eq(2)
+    expect(artist.genres).contains Genre.find_by(name:"Pop")
+  end
   #pending "add some examles to (or delete) #{__FILE__}"
 end

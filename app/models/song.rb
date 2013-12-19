@@ -1,9 +1,14 @@
 class Song < ActiveRecord::Base
-    belongs_to :artist  #song has an artist id
+    belongs_to :artist , touch:true #song has an artist id , touch true means that updates to artist which is a related model will update the dependent
     belongs_to :genre  #song has a  genre id
 
     validates :title, :presence => {:message=> "Every song has a name, enter one even if it's Untitled"  }
+    #after_save fires only after a .save, after_commit is fired after every successful DB operation
+    after_commit :invalidate_cache
 
+    def invalidate_cache
+      Rails.cache.clear([:artist,self.artist_id, :songs])
+    end
     #reader for genre name
     def genre_name
       self.genre.name unless self.genre.nil?

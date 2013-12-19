@@ -2,7 +2,9 @@ Current User: <%= current_user %>
 <h1>Listing songs</h1>
 <div id="songs_list">
 
-  <%= render 'song_list', songs:@songs    %>
+  <% cache @songs do %>
+    <%= render 'song_list', songs:@songs    %>
+  <% end %>
 </div>
 
 <%= link_to 'New Song', new_song_path %>

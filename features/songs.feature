@@ -1,8 +1,12 @@
-@wip #work in progress
+#work in progress
+@wip
 Feature: Song Management
   As a record label owner
   I need to be able to add songs
   So that you know, I can sell them to people
+
+  Background:
+    Given I am logged in
 
   ##Arrange/Given
   #Act/When
